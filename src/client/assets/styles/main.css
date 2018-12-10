@@ -7,3 +7,61 @@ html, body {
 * {
   box-sizing: border-box;
 }
+
+.strike-through {
+  text-decoration: line-through;
+  color: slategray;
+}
+
+.table th {
+  border-top: none;
+}
+
+table { margin-top: 20px; }
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px;
+}
+
+.no-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  justify-content: space-around;
+  height: 120px;
+}
+
+nav {
+  margin-left: -15px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #777;
+}
+
+.container-fluid {
+  border-bottom: 1px solid rgb(233, 236, 239);
+}
+
+h1.display-4 {
+  font-weight: 300;
+  margin-top: -30px;
+  color: #777;
+}
+
+p.lead .btn {
+  background-color: rgb(235, 102, 53);
+  color: white;
+  border: none;
+}
+
+p.lead .btn:hover {
+  background-color: rgb(235, 85, 31);
+}

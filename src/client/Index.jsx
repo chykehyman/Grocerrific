@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Routes from './Routes';
+
 import '../../node_modules/bootstrap/dist/css/bootstrap.min';
 import './assets/styles/main';
 
 
 ReactDOM.render(
-  <div className="app">App is working</div>,
+  <Routes />,
   document.getElementById('app')
 );
 
