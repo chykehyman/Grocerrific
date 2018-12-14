@@ -3,7 +3,12 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
 import compression from 'compression';
+import dotenv from 'dotenv';
 
+import mongoDbConfig from './dbConfig';
+import groceryRoutes from './routes/groceryRoute';
+
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -14,12 +19,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('build'));
 
+mongoDbConfig();
+
 app.get('/api', (request, response) => {
   response.json({
     status: 'Success',
     message: 'Welcome to Grocerrific API'
   });
 });
+app.use('/api', groceryRoutes);
 
 app.all('/api*', (request, response) => {
   response.status(404).json({

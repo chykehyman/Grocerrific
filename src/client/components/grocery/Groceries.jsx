@@ -18,6 +18,14 @@ export class Groceries extends Component {
   render() {
     return (
       <Fragment>
+        <div className="input-group mb-3 mt-4 ml-0 pl-0 col-md-5">
+          <input
+            type="text" className="form-control"
+            placeholder="enter item name" />
+          <div className="input-group-append">
+            <button className="btn btn-outline-secondary" type="button">Add Item</button>
+          </div>
+        </div>
         <GroceryItemList items={this.groceryItems} />
       </Fragment>
     );
