@@ -12,7 +12,7 @@ class GroceryController {
     GroceryModel.find({}, '_id name purchaseStatus')
       .then((items) => {
         if (items.length === 0) {
-          return dataResponse.error(response, 404, 'There are no items in the store');
+          return dataResponse.success(response, 200, 'There are no items in the store', items);
         }
 
         return dataResponse.success(response, 200, 'All items retreived successfully', items);
@@ -20,11 +20,18 @@ class GroceryController {
       .catch(() => dataResponse.error(response, 500, GroceryController.serverError));
   }
 
-  static createItem = (request, response) => {
-    const { name, price } = request.body;
-    const grocery = new GroceryModel({ name, price });
+  static createItem = async (request, response) => {
+    const { name } = request.body;
 
-    grocery.save()
+    const foundItem = await GroceryModel.findOne({ name });
+
+    if (foundItem) {
+      return dataResponse.error(response, 409, `You already have ${foundItem.name} in your list`);
+    }
+
+    const grocery = new GroceryModel({ name });
+
+    return grocery.save()
       .then(item => dataResponse.success(response, 201, 'Item has been added', item))
       .catch(() => dataResponse.error(response, 400, 'Unable to save item'));
   }
@@ -69,7 +76,7 @@ class GroceryController {
       if (!deletedItem) {
         return dataResponse.error(response, 404, GroceryController.noItemFound);
       }
-      return dataResponse.success(response, 200, 'Item has been deleted', deletedItem);
+      return dataResponse.success(response, 200, `${deletedItem.name} has been deleted`, { id: deletedItem._id });
     } catch (e) {
       return dataResponse.error(response, 500, GroceryController.serverError);
     }

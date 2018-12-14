@@ -21,23 +21,23 @@ app.use(express.static('build'));
 
 mongoDbConfig();
 
-app.get('/api', (request, response) => {
+app.get('/api/v1', (request, response) => {
   response.json({
     status: 'Success',
     message: 'Welcome to Grocerrific API'
   });
 });
-app.use('/api', groceryRoutes);
+app.use('/api/v1/', groceryRoutes);
 
-app.all('/api*', (request, response) => {
+app.all('*', (request, response) => {
   response.status(404).json({
     status: 'Failed',
-    message: 'API route does not exist. Redirect to /api'
+    message: 'API route does not exist. Redirect to /api/v1'
   });
 });
 
 app.get('*', (request, response) => {
-  response.sendFile(path.resolve(__dirname, './index.html'));
+  response.sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
 app.listen(port, () => console.log(`server started on port ${port}`));
