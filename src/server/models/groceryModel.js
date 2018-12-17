@@ -13,6 +13,7 @@ const GroceryItemSchema = new Schema({
     type: Boolean,
     default: false
   }
-});
+},
+{ timestamps: true });
 
 export default mongoose.model('GroceryItem', GroceryItemSchema);

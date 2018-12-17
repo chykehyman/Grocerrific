@@ -65,3 +65,20 @@ p.lead .btn {
 p.lead .btn:hover {
   background-color: rgb(235, 85, 31);
 }
+
+.no-items {
+  color: #6c757d
+}
+
+.loader-container {
+  display: flex;
+  height: 350px;
+  justify-content: center;
+  align-items: center;
+}
+
+.field-error {
+  color: #921e2a;
+  font-style: italic;
+  font-size: 12px;
+}
