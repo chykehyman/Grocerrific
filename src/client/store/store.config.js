@@ -7,7 +7,7 @@ const env = process.env.NODE_ENV || 'development';
 
 let middleware = compose(
   applyMiddleware(thunk, reduxImmutableStateInvariant()),
-  window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
 );
 
 if (env === 'production') {

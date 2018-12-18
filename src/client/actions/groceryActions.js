@@ -46,7 +46,7 @@ export const fetchAllGroceries = () => (dispatch) => {
       dispatch(isFetching(false));
     })
     .catch((error) => {
-      dispatch(generalProcessError(error.response.data));
+      dispatch(generalProcessError(error.response.data.message));
       dispatch(isFetching(false));
     });
 };
@@ -76,7 +76,7 @@ export const deleteGrocery = _id => (dispatch) => {
       toast('success', message);
     })
     .catch((error) => {
-      dispatch(generalProcessError(error.response.data));
+      dispatch(generalProcessError(error.response.data.message));
       dispatch(isProcessing(false));
     });
 };
@@ -91,7 +91,7 @@ export const purchaseOrDropGrocery = _id => (dispatch) => {
       toast('success', message);
     })
     .catch((error) => {
-      dispatch(generalProcessError(error.response.data));
+      dispatch(generalProcessError(error.response.data.message));
       dispatch(isProcessing(false));
     });
 };

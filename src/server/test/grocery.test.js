@@ -8,7 +8,7 @@ const request = supertest(app);
 
 describe('test cases for grocery apis', () => {
   let groceryItem;
-  before((done) => {
+  beforeAll((done) => {
     GroceryModel.deleteMany({}).then(() => {
       done();
     });

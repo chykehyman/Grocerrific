@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Groceries /> component should render without crashing 1`] = `
+<Fragment>
+  <div
+    className="input-group mb-3 mt-4 ml-0 pl-0 col-md-5"
+  >
+    <input
+      autoComplete="off"
+      className="form-control"
+      name="name"
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="enter item name"
+      type="text"
+      value=""
+    />
+    <div
+      className="input-group-append"
+    >
+      <button
+        className="btn btn-outline-secondary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Add Item
+      </button>
+    </div>
+  </div>
+  <GroceryItemList
+    action=""
+    deleteItem={[Function]}
+    isProcessing={false}
+    items={Array []}
+    purchaseOrDropItem={[Function]}
+    selectedId=""
+  />
+</Fragment>
+`;

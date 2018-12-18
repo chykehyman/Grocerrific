@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GroceryItemList /> component should render without crashing 1`] = `
+<div
+  className="no-items"
+>
+  <i
+    className="fa fa-exclamation-triangle fa-3x pb-3 d-block"
+  />
+  <p
+    className="lead"
+  >
+    There are no items in the store
+  </p>
+</div>
+`;

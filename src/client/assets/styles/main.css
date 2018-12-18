@@ -82,3 +82,9 @@ p.lead .btn:hover {
   font-style: italic;
   font-size: 12px;
 }
+
+.nav-link.active {
+  background-color: whitesmoke;
+  font-weight: 600;
+   color: rgb(248, 77, 15);
+}
