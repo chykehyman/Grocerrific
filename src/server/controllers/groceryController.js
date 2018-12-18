@@ -33,7 +33,7 @@ class GroceryController {
 
     return grocery.save()
       .then(item => dataResponse.success(response, 201, 'Item has been added', item))
-      .catch(() => dataResponse.error(response, 400, 'Unable to save item'));
+      .catch(() => dataResponse.error(response, 500, 'Unable to save item'));
   }
 
   static updateItem = (request, response) => {
