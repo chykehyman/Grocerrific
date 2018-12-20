@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import toastr from 'toastr';
 
 import Routes from './Routes';
@@ -25,7 +26,9 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Routes />
+    <Router>
+      <Routes />
+    </Router>
   </Provider>,
   document.getElementById('app')
 );

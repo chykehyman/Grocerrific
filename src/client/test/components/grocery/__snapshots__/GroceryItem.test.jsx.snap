@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GroceryItem /> component should render without crashing 1`] = `
+<tr>
+  <td>
+     
+  </td>
+  <td
+    className="list-unstyled"
+  >
+    tomato
+  </td>
+  <td>
+    <button
+      className="btn btn-sm btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Buy
+    </button>
+    <span
+      className="pl-2"
+    />
+  </td>
+  <td>
+    <button
+      className="btn btn-outline-danger btn-sm"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Delete
+    </button>
+    <span
+      className="pl-2"
+    />
+  </td>
+</tr>
+`;

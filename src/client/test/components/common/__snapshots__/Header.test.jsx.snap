@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> component renders the header component without crashing 1`] = `
+<div
+  className="container header-container"
+>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    to="/"
+  >
+    <img
+      alt="site_logo"
+      height="55"
+      src={
+        Object {
+          "process": [Function],
+        }
+      }
+      width="55"
+    />
+  </NavLink>
+  <nav>
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      className="nav-link"
+      exact={true}
+      to="/"
+    >
+      Home
+    </NavLink>
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      className="nav-link"
+      exact={true}
+      to="/shop"
+    >
+      Shop
+    </NavLink>
+  </nav>
+</div>
+`;

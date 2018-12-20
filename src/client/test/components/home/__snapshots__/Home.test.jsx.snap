@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> component test renders home page component without crashing 1`] = `
+<div
+  className="jumbotron mt-4"
+>
+  <h1
+    className="display-4"
+  >
+    STOP AND SHOP
+  </h1>
+  <p>
+    <i
+      style={
+        Object {
+          "color": "#777",
+        }
+      }
+    >
+      Your one stop shop for your grocery items
+    </i>
+  </p>
+  <p
+    className="lead"
+  >
+    <Link
+      className="btn btn-lg"
+      replace={false}
+      to="/shop"
+    >
+      Shop Now
+    </Link>
+  </p>
+</div>
+`;

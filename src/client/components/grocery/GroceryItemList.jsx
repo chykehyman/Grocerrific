@@ -1,10 +1,13 @@
 import React from 'react';
-import { array, func, string } from 'prop-types';
+import {
+  array, func, string, bool
+} from 'prop-types';
 
 import GroceryItem from './GroceryItem';
 
 const propTypes = {
   items: array.isRequired,
+  isProcessing: bool.isRequired,
   selectedId: string.isRequired,
   action: string.isRequired,
   deleteItem: func.isRequired,
