@@ -17,7 +17,7 @@ app.use(compression());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static('build'));
+app.use(express.static('build/client'));
 
 mongoDbConfig();
 
@@ -29,7 +29,7 @@ app.get('/api/v1', (request, response) => {
 });
 app.use('/api/v1/', groceryRoutes);
 
-app.all('*', (request, response) => {
+app.all('/api*', (request, response) => {
   response.status(404).json({
     status: 'Failed',
     message: 'API route does not exist. Redirect to /api/v1'

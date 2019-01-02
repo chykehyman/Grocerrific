@@ -28,11 +28,11 @@ module.exports = (env, argv) => ({
   devtool: argv.mode === 'production' ? 'inline-source-map' : 'source-map',
   entry: argv.mode === 'production' ? prodEntryPoint : devEntryPoint,
   output: {
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, './build/client'),
     filename: '[name].[hash].js'
   },
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    contentBase: path.join(__dirname, 'build/client'),
     compress: true,
     overlay: true,
     hot: hotFlag,
